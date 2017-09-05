@@ -1,0 +1,592 @@
+// ==========================================================================
+// NORMALIZE
+// ==========================================================================
+@import "normalize.css"
+
+// ==========================================================================
+// TYPOGRAPHY
+// ==========================================================================
+@font-face
+	font-family: 'Notera'
+	src: url('font/notera.woff2') format('woff2')
+	
+// ==========================================================================
+// VARIABLES
+// ==========================================================================
+// Typography
+$sans: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+$serif: 'Crimson Text', Times, 'Times New Roman', serif
+$script: Notera, 'Crimson Text', Times, 'Times New Roman', serif
+// Colors
+$colors: (gray: rgb(97,99,101), offblack: rgb(37,38,40), gray75: rgb(137,138,140), gray50: rgb(176,177,178), gray25: rgb(215,216,216), gray10: rgb(239,239,239), hobsons: rgb(30,120,122), hobsons150: rgb(3,71,76), hobsons75: rgb(85,165,168), hobsons50: rgb(141,195,197), hobsons25: rgb(198,225,226), hobsons10: rgb(232,243,243), fuchsia: rgb(210,0,97), fuchsia150: rgb(187,8,80), fuchsia75: rgb(230,92,147), fuchsia50: rgb(238,146,183), fuchsia25: rgb(246,200,219), fuchsia10: rgb(252,233,240), purple: rgb(75,68,197), purple150: rgb(37,34,166), purple75: rgb(137,134,218), purple50: rgb(176,174,230), purple25: rgb(215,214,243), purple10: rgb(239,238,250), teal: rgb(108,203,203), teal150: rgb(55,162,162), teal75: rgb(152,216,216), teal50: rgb(186,229,229), teal25: rgb(221,242,242), teal10: rgb(241,250,250), green: rgb(188,218,184), green150: rgb(138,186,133), green75: rgb(205,227,202), green50: rgb(221,236,219), green25: rgb(238,246,237), green10: rgb(248,251,248), white: rgb(255,255,255), facebook: #456199, twitter: #55acee, linkedin: #1d89bf, google: #dd4b39, rss: #ee802f)
+@each $name, $value in $colors
+	.bg-#{$name}
+		background-color: $value
+	.#{$name}
+		color: $value
+@function color($key)
+	@if map-has-key($colors, $key)
+		@return map-get($colors, $key)
+	@warn "Unknown `#{$key}` in $colors."
+	@return null
+// Units
+$base: 1.2rem
+// Animations
+$runup: cubic-bezier(1.000, -0.530, 0.405, 1.425)
+// Breakpoints
+$small: "only screen and (min-width : 600px)"
+$medium: "only screen and (min-width : 800px)"
+$large: "only screen and (min-width : 960px)"
+$xxl: "only screen and (min-width : 1200px)"
+
+// ==========================================================================
+// MIXINS
+// ==========================================================================
+// LAYOUT
+@mixin clearfix
+	*zoom: 1
+	&:before,
+	&:after
+		content: ''
+		display: table
+	&:after
+		clear: both
+// FX
+@mixin transition($duration, $func, $trans...)
+	-webkit-transition-property: $trans
+	-webkit-transition-duration: $duration
+	-webkit-transition-timing-function: $func
+	-moz-transition-property: $trans
+	-moz-transition-duration: $duration
+	-moz-transition-timing-function: $func
+	transition-property: $trans
+	transition-duration: $duration
+	transition-timing-function: $func
+@mixin animate($frames, $count, $func, $duration)
+	-webkit-animation-name: $frames
+	-webkit-animation-iteration-count: $count
+	-webkit-animation-timing-function: $func
+	-webkit-animation-duration: $duration
+	animation-name: $frames
+	animation-iteration-count: $count
+	animation-timing-function: $func
+	animation-duration: $duration
+// LINKS
+@mixin line
+	display: inline-block
+	width: $menu-size
+	height: $menu-size/10
+	background: $white
+	border-radius: $menu-size/20
+	transition: $transition
+	top: -0.4rem
+// COLORBAR
+@mixin colorbar($col1, $col2, $col3, $col4)
+	.colorbar span
+		&:nth-child(1)
+			background-color: $col1
+		&:nth-child(2)
+			background-color: $col2
+		&:nth-child(3)
+			background-color: $col3
+		&:nth-child(4)
+			background-color: $col4
+
+// ==========================================================================
+// CORE
+// ==========================================================================
+html
+	min-height: 100%
+	height: 100%
+	font-size: 62.5%
+body
+	font:
+		family: $sans
+		size: 1.6rem
+		kerning: normal
+	line-height: $base*2
+	color: color(offblack)
+	min-height: 100%
+	height: 100%
+::selection
+	background: color(gray)
+	color: color(white)
+	text-shadow: none
+a
+	color: color(hobsons)
+	text-decoration: none
+	cursor: pointer
+	position: relative
+	z-index: 1
+	&:before
+		content: ''
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+		height: $base*0.5
+		background: color(hobsons75)
+		opacity: 0
+		-webkit-transition: opacity 0.3s, -webkit-transform 0.3s
+		-moz-transition: opacity 0.3s, -moz-transform 0.3s
+		transition: opacity 0.3s, transform 0.3s
+		-webkit-transform: translateY(0.6rem)
+		-moz-transform: translateY(0.6rem)
+		transform: translateY(0.6rem)
+	&:hover:before
+		opacity: 1
+		-webkit-transform: translateY(0rem)
+		-moz-transform: translateY(0remm)
+		transform: translateY(0rem)
+h1, h2, h3, h4, h5, h6
+	font-weight: 400
+h1
+	font:
+		size: $base*3.5
+		weight: 300
+	line-height: $base*4
+	padding-bottom: $base*2
+	@media #{$large}
+		font-size: $base*5
+		line-height: $base*6
+		padding:
+			top: $base*2
+			bottom: $base*4
+	&.title
+		text-transform: uppercase
+		letter-spacing: 0.25ex
+		@media #{$large}
+			font-size: $base*7
+h2
+	font-size: $base*2
+	line-height: $base*3
+	padding-bottom: $base*3
+	@media #{$large}
+		font-size: $base*3
+		line-height: $base*4
+	&.subtitle
+		font:
+			family: $serif
+			size: $base*2
+			style: italic
+		line-height: $base*2
+		padding-bottom: $base*2
+		@media #{$large}
+			font-size: $base*3
+			line-height: $base*3
+			padding-bottom: $base*4
+	a
+		color: color(offblack)
+h3
+	font:
+		size: $base*1.5
+		weight: 700
+	line-height: $base*2
+	padding-bottom: $base*2
+	@media #{$large}
+		font-size: $base*2
+		line-height: $base*3
+		padding-bottom: $base*4
+h4
+	font-size: $base*2
+	line-height: $base*2
+	padding-top: $base*2
+h5
+	font:
+		size: $base*1.5
+		weight: 700
+	line-height: $base*2
+h6
+	font-size: $base
+	line-height: $base
+	text-transform: uppercase
+	letter-spacing: 0.25ex
+p, ul, ol, blockquote
+	padding-bottom: $base*2
+li
+	list-style-type: none
+small
+	font-size: $base
+	color: color(gray)
+	display: block
+blockquote
+	font:
+		family: $serif
+		size: $base*1.5
+		style: italic
+	line-height: $base*2
+	color: color(gray)
+	padding-top: $base*2
+	h5
+		font:
+			family: $sans
+			weight: 700
+			style: normal
+		color: color(offblack)
+	p
+		padding-bottom: 0
+	small
+		font:
+			family: $sans
+			style: normal
+		padding-top: $base*0.5
+	.author
+		font:
+			family: $script
+			size: $base*2.5
+	.avatar
+		float: left
+		margin: 0 $base*2 $base*2 0
+	.fact
+		display: inline-block
+		width: $base*12
+		height: $base*8
+		float: left
+		font:
+			family: $sans
+			size: $base*6
+			weight: 700
+			style: normal
+		line-height: $base*6
+		color: color(purple)
+abbr[title]
+	border-bottom: 0
+strong
+	font-weight: 700
+b
+	font-weight: 400
+i
+	display: none
+hr
+	display: block
+	height: 1px
+	border: 0
+	border-top: 1px solid color(gray75)
+	margin: $base auto
+	padding: 0
+	@media #{$medium}
+		&.wide4
+			width: 400/12 * 1%
+	@media #{$large}
+		margin-bottom: $base*4
+	@media #{$xxl}
+		margin-bottom: $base*6
+table
+	margin-bottom: $base*2
+	width: 100%
+	border: 0
+		spacing: 0
+td, th
+	text-align: left
+	font-weight: 400
+button, .button
+	background-color: color(hobsons)
+	border: 2px solid color(hobsons)
+		radius: $base*4
+	color: color(white)
+	font:
+		family: $sans
+		size: $base
+		weight: 600
+	line-height: $base
+	margin: 0
+	letter-spacing: 0.25ex
+	text-transform: uppercase
+	padding: $base*1 $base*3
+	outline: none
+	&:before
+		display: none
+	&:hover, &.outline
+		background-color: transparent
+		color: color(hobsons)
+	&.outline:hover
+		background-color: color(hobsons)
+		color: color(white)
+svg, svg:hover
+	@include transition(0.25s, ease-in-out, fill)
+section
+	display: block
+	@include clearfix
+	@media #{$medium}
+		padding-bottom: $base*2
+	@media #{$xxl}
+		padding-bottom: $base*6
+input, select, textarea
+	font:
+		family: $sans
+		size: $base*1.5
+		weight: 600
+	line-height: $base*2
+	padding: $base*1.5 $base
+	border: 1px solid transparent
+		bottom-color: color(teal)
+	background-color: transparentize(color(teal), 0.75)
+	color: color(offblack)
+	display: inline-block
+	margin-bottom: $base*2
+	box-sizing: border-box
+	&:active, &:focus
+		background-color: transparentize(color(teal), 0.9)
+		border-color: color(teal)
+		outline: none
+textarea
+	resize: vertical
+select
+	-webkit-appearance: none
+input[type='submit']
+	background-color: color(fuchsia)
+	border-color: color(fuchsia)
+	color: color(white)
+	font-size: $base*1.5
+	padding: $base*1.5 $base*6
+	&:hover
+		border-color: color(hobsons)
+label
+	font-size: $base*1.5
+	position: absolute
+	color: transparentize(color(hobsons), 0.25)
+	margin: 
+		top: $base*1.5
+		left: $base
+	opacity: 1
+	@include transition(0.25s, $runup, margin, opacity)
+input:focus + label, select:focus + label, textarea:focus + label,
+input.focus + label, select.focus + label, textarea.focus + label
+	text-transform: uppercase
+	font-size: $base*0.75
+	margin-top: 0
+	letter-spacing: 0.25ex
+	opacity: 0.75
+address
+	font:
+		family: $sans
+		size: $base*1.15
+		style: normal
+	padding-bottom: $base
+code
+	font:
+		family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace
+		size: $base
+	line-height: $base*1.5
+	background-color: color(gray25)
+	margin-bottom: $base
+pre
+	display: block
+	background-color: color(gray25)
+	margin: $base*2 0
+	padding: $base $base*2
+
+// ==========================================================================
+// COMMON
+// ==========================================================================
+// Color Bar
+.colorbar
+	width: 100%
+	height: $base*0.5
+	position: relative
+	top: -$base
+	@media #{$medium}
+		top: 0
+	span
+		display: block
+		height: 100%
+		float: left
+		&:nth-child(1)
+			width: 140/3 * 1%
+		&:nth-child(2)
+			width: 80/3 * 1%
+		&:nth-child(3)
+			width: 50/3 * 1%
+		&:nth-child(4)
+			width: 30/3 * 1%
+// FX
+a,
+*:hover,
+*:focus,
+	@include transition(0.25s, ease-in-out, background, color, padding, border, box-shadow, opacity)
+// Layout
+.wrapper
+	padding: 0 $base*2
+	box-sizing: border-box
+	@media #{$xxl}
+		max-width: 120rem
+		margin: 0 auto
+// Typography
+.c
+	text-align: center
+.light
+	font-weight: 300
+.quote
+	font:
+		family: $serif
+		style: italic
+		size: $base*2
+	line-height: $base*2
+	color: color(purple)
+	padding:
+		left: $base*4
+		bottom: 0
+	margin: $base*2 0
+		collapse: separate
+	-webkit-margin-collapse: separate
+	border-left: $base/3 solid color(purple50)
+.list li
+	margin-left: $base*4
+ul.list
+	li
+		list-style-type: square
+ol.list
+	li
+		list-style-type: decimal
+.small
+	font-size: 1.4rem
+	color: color(gray)
+// Images
+.avatar
+	border-radius: 50%
+	width: $base*6
+	height: $base*6
+	overflow: hidden
+	background-color: transparentize(color(gray), 0.9)
+// Icons
+.ico
+	width: $base*2
+	height: $base*2
+	line-height: $base*2
+	background-color: transparentize(color(teal), 0.5)
+	border: 0
+		radius: 50%
+	display: inline-block
+	text-align: center
+	position: relative
+	@extend .nofx
+	@include transition(0.25s, $runup, transform)
+	svg
+		display: block
+		fill: color(offblack)
+		position: absolute
+		width: $base*2
+		height: $base*2
+		top: 0
+		left: 0
+	&:hover
+		transform: scale(1.5)
+		svg
+			fill: color(white)
+.facebook:hover
+	background-color: color(facebook)
+.twitter:hover
+	background-color: color(twitter)
+.linkedin:hover
+	background-color: color(linkedin)
+.rss:hover
+	background-color: color(rss)
+// Links
+.nofx
+	&:before
+		display: none
+// Buttons
+.cta
+	background-color: color(fuchsia)
+	border-color: color(fuchsia)
+	color: color(white)
+	&:hover
+		background-color: transparent
+		color: color(fuchsia)
+	&.outline
+		background-color: transparent
+		color: color(fuchsia)
+		&:hover
+			background-color: color(fuchsia)
+			color: color(white)
+.reversed
+	background-color: color(white)
+	border-color: color(white)
+	color: color(hobsons)
+	&:hover
+		background-color: transparent
+		color: color(white)
+	&.outline
+		color: color(white)
+		&:hover
+			background-color: color(white)
+			color: color(fuchsia)
+// Forms
+.form-row
+	position: relative
+	@include clearfix
+	label
+		left: 0
+		top: 0
+	input, select, textarea
+		width: 100%
+.form-half
+	position: relative
+	width: 48%
+	float: left
+	&:first-child
+		margin-right: 4%
+		
+// ==========================================================================
+// ANIMATIONS
+// ==========================================================================
+.animated
+	animation-duration: 1s
+	animation-fill-mode: both
+@keyframes fadeIn
+	from
+		opacity: 0
+	to
+		opacity: 1
+.fadeIn
+	animation-name: fadeIn
+@keyframes fadeInDown
+	from
+		opacity: 0
+		transform: translate3d(0, -20%, 0)
+	to
+		opacity: 1
+		transform: none
+.fadeInDown
+	animation-name: fadeInDown
+@keyframes fadeInLeft
+	from
+		opacity: 0
+		transform: translate3d(-20%, 0, 0)
+	to
+		opacity: 1
+		transform: none
+.fadeInLeft
+	animation-name: fadeInLeft
+@keyframes fadeInRight
+	from
+		opacity: 0
+		transform: translate3d(20%, 0, 0)
+	to
+		opacity: 1
+		transform: none
+.fadeInRight
+	animation-name: fadeInRight
+@keyframes fadeInUp
+	from
+		opacity: 0
+		transform: translate3d(0, 20%, 0)
+	to
+		opacity: 1
+		transform: none
+.fadeInUp
+	animation-name: fadeInUp
+@keyframes fadeOut
+	from
+		opacity: 1
+	to
+		opacity: 0
+.fadeOut
+	animation-name: fadeOut
+
+
+// ==========================================================================
+// STYLEGUIDE - styleguide specific only (remove before using)
+// ==========================================================================
+@import 'styleguide'
+			

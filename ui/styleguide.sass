@@ -1,0 +1,70 @@
+#hbs-sg
+	section
+		padding: $base*4 0
+		border-bottom: 2px solid color(gray)
+		margin-bottom: $base*6
+		p img
+			max-width: 100%
+		form
+			max-width: 60%
+			margin-bottom: $base*4
+	#logo
+		@extend .nofx
+		position: relative
+		left: -$base
+		img
+			max-width: 24rem
+			height: auto
+			margin: $base*2 0 $base*4 0
+	.colors-main
+		li
+			display: inline-block
+			width: 25%
+			margin-right: 5%
+			text-align: center
+			height: $base*10
+	.colors-secondary
+		li
+			display: inline-block
+			width: 10%
+			margin-right: 5%
+			text-align: center
+			height: $base*8
+	.colors-code
+		display: inline-block
+		width: 15%
+		margin:
+			right: 5%
+			bottom: $base*2
+			top: $base*2
+		text-align: center
+		height: $base*10
+		border: 2px solid color(gray)
+		p
+			padding: $base 0
+			&.white
+				text-shadow: 0 1px 4px transparentize(color(offblack), 0.25)
+	.colors-shades
+		td
+			text-align: center
+			padding: $base*2 0
+			vertical-align: top
+	.box
+		width: 30%
+		min-height: $base*7
+		text-align: center
+		padding-top: $base*3
+		margin:
+			right: 10%
+			bottom: $base*2
+			top: $base*2
+		display: inline-block
+		&.left
+			text-align: left
+	.bg-img
+		background: url(../assets/btnbg.jpg) no-repeat 50% 50%
+	.typography
+		h1, h2, h3, h4, h5, h6
+			padding:
+				top: $base*4
+				bottom: $base

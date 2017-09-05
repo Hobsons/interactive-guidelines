@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+	
+<head>
+	<meta charset="utf-8" />
+	<title>Hobsons :: Interactive Brand Guidelines</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+	<script>
+	  WebFont.load({
+		google: {
+		  families: ['Open Sans:300,400,400italic,600,700', 'Crimson Text:400italic']
+		}
+	  });
+	</script>
+	<link rel="stylesheet" href="ui/hbs.css">
+</head>
+	
+<body id="hbs-sg"><div class="wrapper">
+	<section>
+		<article>
+			<a href="https://www.hobsons.com" id="logo"><img src="assets/hobsons_2x.gif" alt="Hobsons" /></a>
+			<h2>Introduction</h2>
+			<p>Hello and welcome!<br />The following set of brand guidelines will help guide and inform your decisions when designing Hobsons materials for an interactive medium.</p>
+			<small>Last updated: 06.06.2017</small>
+		</article>
+	</section>
+
+	<section>
+		<article>
+			<h2>Colors</h2>
+			<p>At Hobsons we're using two main colors - Hobsons Teal and Gray:</p>
+			<ul class="colors-main">
+				<li class="bg-hobsons"><code>.bg-hobsons</code></li>
+				<li class="bg-gray"><code>.bg-gray</code></li>
+			</ul>
+			<p>as well as four secondary colors - Fuchsia, Purple, Teal, and Green:</p>
+			<ul class="colors-secondary">
+				<li class="bg-fuchsia"><code>.bg-fuchsia</code></li>
+				<li class="bg-purple"><code>.bg-purple</code></li>
+				<li class="bg-teal"><code>.bg-teal</code></li>
+				<li class="bg-green"><code>.bg-green</code></li>
+			</ul>
+			<p>Our secondary colors are used primarily for accents. As such, they should never overpower our primary colors.</p>
+			<h4>Color Codes</h4>
+			<div class="colors-code">
+				<p class="hobsons"><strong>Hobsons Teal</strong></p>
+				<code>.hobsons</code>
+				<small>rgb: ( 30, 12, 122 )<br />hex: #1E787A</small>
+			</div>
+			<div class="colors-code">
+				<p class="gray"><strong>Gray</strong></p>
+				<code>.gray</code>
+				<small>rgb: ( 97, 99, 101 )<br />hex: #616365</small>
+			</div>
+			<div class="colors-code">
+				<p class="fuchsia"><strong>Fuchsia</strong></p>
+				<code>.fuchsia</code>
+				<small>rgb: ( 210, 0, 97 )<br />hex: #D20061</small>
+			</div>
+			<div class="colors-code">
+				<p class="purple"><strong>Purple</strong></p>
+				<code>.purple</code>
+				<small>rgb: ( 75, 68, 197 )<br />hex: #4B44C5</small>
+			</div>
+			<div class="colors-code">
+				<p class="teal"><strong>Teal</strong></p>
+				<code>.teal</code>
+				<small>rgb: ( 108, 203, 203 )<br />hex: #6CCBCB</small>
+			</div>
+			<div class="colors-code">
+				<p class="green"><strong>Green</strong></p>
+				<code>.green</code>
+				<small>rgb: ( 188, 218, 184 )<br />hex: #BCDAB8</small>
+			</div>
+			<div class="colors-code">
+				<p class="offblack"><strong>Offblack</strong></p>
+				<code>.offblack</code>
+				<small>rgb: ( 37, 38, 40 )<br />hex: #252628</small>
+			</div>
+			<div class="colors-code">
+				<p class="white"><strong>White</strong></p>
+				<code>.white</code>
+				<small>rgb: ( 255, 255, 255 )<br />hex: #FFFFFF</small>
+			</div>
+			<h4>Shades and Tints</h4>
+			<p>For situations when more or less contrast is required in order to establish proper hierarchies, each of our colors has a number of lighter tints as well as a darker shade.</p>
+			<table class="colors-shades">
+				<tr>
+					<td class="bg-hobsons150"><code>.bg-hobsons150</code></td>
+					<td class="bg-offblack"><code>.bg-offblack</code></td>
+					<td class="bg-fuchsia150"><code>.bg-fuchsia150</code></td>
+					<td class="bg-purple150"><code>.bg-purple150</code></td>
+					<td class="bg-teal150"><code>.bg-teal150</code></td>
+					<td class="bg-green150"><code>.bg-green150</code></td>
+				</tr>
+				<tr>
+					<td class="bg-hobsons75"><code>.bg-hobsons75</code></td>
+					<td class="bg-gray75"><code>.bg-gray75</code></td>
+					<td class="bg-fuchsia75"><code>.bg-fuchsia75</code></td>
+					<td class="bg-purple75"><code>.bg-purple75</code></td>
+					<td class="bg-teal75"><code>.bg-teal75</code></td>
+					<td class="bg-green75"><code>.bg-green75</code></td>
+				</tr>
+				<tr>
+					<td class="bg-hobsons50"><code>.bg-hobsons50</code></td>
+					<td class="bg-gray50"><code>.bg-gray50</code></td>
+					<td class="bg-fuchsia50"><code>.bg-fuchsia50</code></td>
+					<td class="bg-purple50"><code>.bg-purple50</code></td>
+					<td class="bg-teal50"><code>.bg-teal50</code></td>
+					<td class="bg-green50"><code>.bg-green50</code></td>
+				</tr>
+				<tr>
+					<td class="bg-hobsons25"><code>.bg-hobsons25</code></td>
+					<td class="bg-gray25"><code>.bg-gray25</code></td>
+					<td class="bg-fuchsia25"><code>.bg-fuchsia25</code></td>
+					<td class="bg-purple25"><code>.bg-purple25</code></td>
+					<td class="bg-teal25"><code>.bg-teal25</code></td>
+					<td class="bg-green25"><code>.bg-green25</code></td>
+				</tr>
+				<tr>
+					<td class="bg-hobsons10"><code>.bg-hobsons10</code></td>
+					<td class="bg-gray10"><code>.bg-gray10</code></td>
+					<td class="bg-fuchsia10"><code>.bg-fuchsia10</code></td>
+					<td class="bg-purple10"><code>.bg-purple10</code></td>
+					<td class="bg-teal10"><code>.bg-teal10</code></td>
+					<td class="bg-green10"><code>.bg-green10</code></td>
+				</tr>
+			</table>
+			<p> All SASS variables for colors can be referenced using the 'color()' mixin:</p>
+			<p><code>color(hobsons), color(gray), color(fuchsia), ...<br />color(hobsons150), color(offblack), color(green10), ...<br /></code></p>
+			<p>There may be situations when real transparency works better than a predefined color. With SASS, we can use the built-in 'transparentize()' function instead of the predefined color variables:</p>
+			<p><code>transparentize(color(hobsons), 0.5)</code></p>
+			<small><strong>Note: </strong>If you need the RGB or HEX values for all our tints and shades, these are defined in our master <a href="ui/hbs.sass">SASS</a> and <a href="ui/hbs.css">CSS</a> files.</small>
+		</article>
+	</section>
+
+	<section>
+		<article>
+			<h2>Typography</h2>
+			<div class="typography">
+				<h1 class="title">Main Title</h1>
+				<small>Open Sans Light - 72px</small>
+				<code>h1.title</code>
+				<h2 class="subtitle">Subtitle</h2>
+				<small>Crimson Text Regular Italic - 36px</small>
+				<code>h2.subtitle</code>
+				<h1>Heading One</h1>
+				<small>Open Sans Light - 72px</small>
+				<code>h1</code>
+				<h2>Heading Two</h2>
+				<small>Open Sans Regular - 48px</small>
+				<code>h2</code>
+				<h3>Heading Three</h3>
+				<small>Open Sans Regular - 36px</small>
+				<code>h3</code>
+				<h4>Heading Four</h4>
+				<small>Open Sans Regular - 24px</small>
+				<code>h4</code>
+				<h5>Heading Five</h5>
+				<small>Open Sans Bold - 18px</small>
+				<code>h5</code>
+				<h6>Heading Six</h6>
+				<small>Open Sans Regular - 12px</small>
+				<code>h6</code>
+				<blockquote>Block quote. We have plenty of these as clients say the nicest things about our products.</blockquote>
+				<small>Crimson Text Regular Italic - 18px</small>
+				<code>blockquote</code>
+				<blockquote><span class="author">John Q. Smith</span></blockquote>
+				<small>Notera Regular - 30px</small>
+				<code>blockquote .author</code>
+				<small>Fine Print</small>
+				<small>Open Sans Regular - 12px</small>
+				<code>small</code>
+			</div>
+			<h4>Paragraphs</h4>
+			<p>Open Sans Regular at 16px is used for our main body copy. The default color is Offblack but Hobsons Gray may also be used to provide a sense of hierarchy when needed.</p>
+			<p class="small">Footnotes and sidebars are set at 14px and always use Hobsons Gray.</p>
+			<p><code>.small</code></p>
+			<h4>Lists</h4>
+			<p>Our unordered lists use a square bullet; our ordered lists are decimal. Bullet position should always be inset.</p>
+			<div class="box left">
+				<ul class="list">
+					<li>Item One</li>
+					<li>Item Two</li>
+					<li>Item Three</li>
+				</ul>
+			</div>
+			<div class="box left">
+				<ol class="list">
+					<li>Item One</li>
+					<li>Item Two</li>
+					<li>Item Three</li>
+				</ol>
+			</div>
+			<p><code>.list</code></p>
+		</article>
+	</section>
+
+	<section>
+		<article>
+			<h2>Units</h2>
+			<p>Our base unit is defined at 12px.</p>
+			<p><code>$base</code></p>
+			<p>Sizing all elements as multiples of our base unit helps maintain consistency and visual flow. The base unit also acts as the baseline for our typography. This helps with heading sizes and maintains a vertical rhythm.</p>
+			<p><img src="assets/baseline.jpg" alt="Baseline" /></p>
+		</article>
+	</section>
+
+	<section>
+		<article>
+			<h2>Grid</h2>
+			<p>Our layouts use a 12-column grid system that was built with our base unit in mind. Our page (viewport) has an inner double gutter on each side. This lets our content breathe and avoids it running into the sides of the page.</p>
+			<p>On large glass, each column is 72px wide with a 12px gutter. Adding the page's double gutters, we have a total width of 1200px.</p>
+			<p>On small glass, each column is 6% wide with a 1% gutter.</p>
+			<p><img src="assets/grid.jpg" alt="Grid system" /></p>
+			<p>Aligning elements to our grid helps maintain visual consistency. Positioning elements outside of the grid should be done with extra care - it is a treatment usually reserved for highly important elements as it will make them stand out more.</p>
+		</article>
+	</section>
+
+	<section>
+		<article>
+			<h2>Buttons</h2>
+			<p>While most of our design elements are rectangular, all of our buttons share the same rounded form. They also share the same all-caps type. This helps them stand out and be easily recognized as actionable items.</p>
+			<p>Our buttons come in two flavors: solid and outlined. We can intermix them freely based on visibility requirements - solid buttons stand out more, outlined buttons blend better with the surrounding content.</p>
+			<p>Fuchsia is the primary color for calls to action - these stand out the most. As such, they shouldn't be overused.</p>
+			<div class="box">
+				<button class="cta">Get Started</button><br />
+				<code>.cta</code>
+			</div>
+			<div class="box">
+				<button class="cta outline">Learn More</button><br />
+				<code>.cta.outline</code>
+			</div>
+			<p>Hobsons Teal is the color for all regular buttons, mainly those associated with forms or other similar actions.</p>
+			<div class="box">
+				<button>Send Message</button><br />
+				<code>button</code>
+			</div>
+			<div class="box">
+				<button class="outline">Add File</button><br />
+				<code>.outline</code>
+			</div>
+			<p>Against darker solid or photo backgrounds, we can also use white buttons.</p>
+			<div class="box bg-hobsons">
+				<button class="reversed">Subscribe</button><br />
+				<code>.reversed</code>
+			</div>
+			<div class="box bg-img">
+				<button class="reversed outline">Register</button><br />
+				<code>.reversed.outline</code>
+			</div>
+		</article>
+	</section>
+
+	<section>
+		<article>
+			<h2>Forms</h2>
+			<p>All our form elements - fields and labels - share a common look. This makes them instantly recognizable.<br />The only exception to this rule can be one-off fields such as one-field forms or stand-alone controls - filters, checkboxes, radio buttons.</p>
+			<p>To keep our forms compact and easy to use on small glass, labels are positioned inside the fields. With a touch of javascript we can make sure this works as intended with pre-populated forms too.</p>
+			<form action="#" class="wide6">
+				<div class="form-row">
+					<div class="form-half">
+						<input type="text" name="first-name" id="first-name" required="required" />
+						<label for="first-name">First Name</label>
+					</div>
+					<div class="form-half">
+						<input type="text" name="last-name" id="last-name" required="required" />
+						<label for="last-name">Last Name</label>
+					</div>
+				</div>
+				<div class="form-row">
+					<input type="email" name="email" id="email" required="required" />
+					<label for="email">Email Address</label>
+				</div>
+				<div class="form-row">
+					<select size="1" name="interests" id="interests" required="required">
+						<option value="" disabled="disabled" selected="selected"></option>
+						<option value="products-pricing">Products / Pricing question</option>
+						<option value="demo">Demo request</option>
+						<option value="rfp">RFP / Bid request</option>
+						<option value="client-support">Client support</option>
+						<option value="partnership">Corporate partnership enquiries</option>
+						<option value="general">General questions / Other</option>
+					</select>
+					<label for="interests">Interested in</label>
+				</div>
+				<div class="form-row">
+					<textarea name="message" id="message" required="required"></textarea>
+					<label for="message">Message</label>
+				</div>
+				<input type="submit" class="button" value="Let’s talk" />
+			</form>
+			<pre><code>
+&lt;form action="#" class="wide6"&gt;
+	&lt;div class="form-row"&gt;
+		&lt;div class="form-half"&gt;
+			&lt;input type="text" name="first-name" id="first-name" required="required" /&gt;
+			&lt;label for="first-name"&gt;First Name&lt;/label&gt;
+		&lt;/div&gt;
+		&lt;div class="form-half"&gt;
+			&lt;input type="text" name="last-name" id="last-name" required="required" /&gt;
+			&lt;label for="last-name"&gt;Last Name&lt;/label&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="form-row"&gt;
+		&lt;input type="email" name="email" id="email" required="required" /&gt;
+		&lt;label for="email"&gt;Email Address&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class="form-row"&gt;
+		&lt;select size="1" name="interests" id="interests" required="required"&gt;
+			&lt;option value="" disabled="disabled" selected="selected"&gt;&lt;/option&gt;
+			&lt;option value="products-pricing"&gt;Products / Pricing question&lt;/option&gt;
+			&lt;option value="demo"&gt;Demo request&lt;/option&gt;
+			&lt;option value="rfp"&gt;RFP / Bid request&lt;/option&gt;
+			&lt;option value="client-support"&gt;Client support&lt;/option&gt;
+			&lt;option value="partnership"&gt;Corporate partnership enquiries&lt;/option&gt;
+			&lt;option value="general"&gt;General questions / Other&lt;/option&gt;
+		&lt;/select&gt;
+		&lt;label for="interests"&gt;Interested in&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class="form-row"&gt;
+		&lt;textarea name="message" id="message" required="required"&gt;&lt;/textarea&gt;
+		&lt;label for="message"&gt;Message&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;input type="submit" class="button" value="Let’s talk" /&gt;
+&lt;/form&gt;
+			</code></pre>
+		</article>
+	</section>
+
+	<section>
+		<article>
+			<h2>Icons</h2>
+			<h4>Product icons</h4>
+			<p>Product icons are a visual representation of our solutions and services. While each has a distinct meaning, they are all unified through concept and execution. We are using line icons with a consistent stroke width.<br />Their meanings has been documented in our <a href="https://docs.google.com/a/hobsons.com/document/d/10amI8xMh8qwCWqLeamIyxbAltRi8kjH-BCzxDRoGXZ0/edit?usp=sharing">Icons and Meanings</a> document and icons from that standard set should be used whenever appropriate.</p>
+			<p><img src="assets/icons-product.png" alt="Product icons" /></p>
+			<h4>Interface icons</h4>
+			<p>Sometimes our interfaces benefit from the use of icons as well. To differentiate these from our product icons, the interface icons are solid and typically much smaller in size. They are usually presented in our action color(s) when indicating an action area.</p>
+			<p><img src="assets/icons-interface.png" alt="Interface icons" width="450" /></p>
+			<p>Our shared brand Dropbox folder contains <a href="https://www.dropbox.com/sh/wgmropahzly6zhe/AACgTzKCsRS2dZXyw91Cuu8oa?dl=0">a complete list of approved icons</a>.</p>
+			<h4>Logo icons</h4>
+			<p>Our product logos contain graphic marks that, under certain conditions, can be used as standalone icons.</p>
+			<p><img src="assets/icons-logo.png" alt="Logo icons" height="48" /></p>
+			<p>Use these as standalone icons only when the full branding and name of the product is present at a higher level. The standalone icon should never be the primary branding element. This is usually determined through positioning and size. The standalone icon should always be smaller than its presence in the full logo. </p>
+			<p>Standalone logo icons can only be represented in our approved list of colors: teal, gray, white.</p>
+			<p>Common scenarios include favicons and avatars.</p>
+			<p><strong>Hobsons</strong> uses a different standalone icon than just the graphic mark in its logo. The same usage rules apply.</p>
+			<p><img src="assets/icons-logo-hobsons.png" alt="Hobsons logo icon" height="48" /></p>
+		</article>
+	</section>
+	
+	<section>
+		<article>
+			<h2>Animation</h2>
+			<p>Transitioning between two visual states as the user performs an action acknowledges the action and establishes focus. With animations, however, more is often less. We use subtle effects to add a layer of visual delight. All transitions should be fast, smooth, and gradual. Regular easing is preferred for most except when additional focus is required, such as a popup or error message.</p>
+		</article>
+	</section>
+
+	<section>
+		<article>
+			<h2>Design Patterns</h2>
+			<p>Hobsons general design style is characterized by flat colors, bold contrasts, clear typography, and generous white space. We use aspirational imagery as a primary focal point, usually no more than one per section.</p>
+			<h4>Overlays</h4>
+			<p>Rectangular overlays using our brand colors are often superimposed on top of images. These can be either solid or use some sort of transparency and blending mode. A solid rectangle is always prefered when used in combination with body copy.</p>
+			<p><img src="assets/overlays-solid.jpg" alt="Solid overlays" /></p>
+			<p>For added visual interest, our overlays can be staggered on top of images or other rectangular areas. We can do this symetrically or even asymetrically for more attention grabbing.</p>
+			<p><img src="assets/overlays-blended.jpg" alt="Blended overlays" /></p>
+			<h4>Color Bar</h4>
+			<p>Our color bar is a repetitive graphic element that can be used as a visual separator. Its colors can be mixed and match from our palette. The ratios for the four colored areas are 50% - 30% - 15% - 15%.</p>
+			<p><img src="assets/colorbar.jpg" alt="Color bar" /></p>
+		</article>
+	</section>
+
+	<section>
+		<article>
+			<h2>Templates</h2>
+			<p>Following are some general design templates and visual layouts based on our grid and general guidelines.</p>
+			<p><img src="assets/template-master.png" alt="Master template" /></p>
+		</article>
+	</section>
+	
+	<section>
+		<article>
+			<h2>Resources</h2>
+			<p><a href="#">Our GitHub repository</a> hosts the latest versions of our boilerplate SASS/CSS/JS/HTML templates. (to be set up)</p>
+		</article>
+	</section>
+	
+</div></body>
+</html>
