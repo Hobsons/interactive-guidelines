@@ -39,40 +39,40 @@
   color: #efefef; }
 
 .bg-hobsons {
-  background-color: #1e787a; }
+  background-color: #008c95; }
 
 .hobsons {
-  color: #1e787a; }
+  color: #008c95; }
 
 .bg-hobsons150 {
-  background-color: #03474c; }
+  background-color: #006973; }
 
 .hobsons150 {
-  color: #03474c; }
+  color: #006973; }
 
 .bg-hobsons75 {
-  background-color: #55a5a8; }
+  background-color: #40a9b0; }
 
 .hobsons75 {
-  color: #55a5a8; }
+  color: #40a9b0; }
 
 .bg-hobsons50 {
-  background-color: #8dc3c5; }
+  background-color: #7fc5ca; }
 
 .hobsons50 {
-  color: #8dc3c5; }
+  color: #7fc5ca; }
 
 .bg-hobsons25 {
-  background-color: #c6e1e2; }
+  background-color: #bfe1e4; }
 
 .hobsons25 {
-  color: #c6e1e2; }
+  color: #bfe1e4; }
 
 .bg-hobsons10 {
-  background-color: #e8f3f3; }
+  background-color: #e5f3f4; }
 
 .hobsons10 {
-  color: #e8f3f3; }
+  color: #e5f3f4; }
 
 .bg-fuchsia {
   background-color: #d20061; }
@@ -274,7 +274,7 @@ body {
   text-shadow: none; }
 
 a {
-  color: #1e787a;
+  color: #008c95;
   text-decoration: none;
   cursor: pointer;
   position: relative;
@@ -286,7 +286,7 @@ a {
     left: 0;
     width: 100%;
     height: 0.6rem;
-    background: #55a5a8;
+    background: #40a9b0;
     opacity: 0;
     -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
     -moz-transition: opacity 0.3s, -moz-transform 0.3s;
@@ -438,7 +438,7 @@ hr {
   padding: 0; }
   @media only screen and (min-width: 800px) {
     hr.wide4 {
-      width: 33.33333%; } }
+      width: 33.3333333333%; } }
   @media only screen and (min-width: 960px) {
     hr {
       margin-bottom: 4.8rem; } }
@@ -457,8 +457,8 @@ td, th {
   font-weight: 400; }
 
 button, .button {
-  background-color: #1e787a;
-  border: 2px solid #1e787a;
+  background-color: #008c95;
+  border: 2px solid #008c95;
     border-radius: 4.8rem;
   color: white;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -474,9 +474,9 @@ button, .button {
     display: none; }
   button:hover, button.outline, .button:hover, .button.outline {
     background-color: transparent;
-    color: #1e787a; }
+    color: #008c95; }
   button.outline:hover, .button.outline:hover {
-    background-color: #1e787a;
+    background-color: #008c95;
     color: white; }
 
 svg, svg:hover {
@@ -536,12 +536,12 @@ input[type='submit'] {
   font-size: 1.8rem;
   padding: 1.8rem 7.2rem; }
   input[type='submit']:hover {
-    border-color: #1e787a; }
+    border-color: #008c95; }
 
 label {
   font-size: 1.8rem;
   position: absolute;
-  color: rgba(30, 120, 122, 0.75);
+  color: rgba(0, 140, 149, 0.75);
   margin-top: 1.8rem;
   margin-left: 1.2rem;
   opacity: 1;
@@ -595,11 +595,11 @@ pre {
     height: 100%;
     float: left; }
     .colorbar span:nth-child(1) {
-      width: 46.66667%; }
+      width: 46.6666666667%; }
     .colorbar span:nth-child(2) {
-      width: 26.66667%; }
+      width: 26.6666666667%; }
     .colorbar span:nth-child(3) {
-      width: 16.66667%; }
+      width: 16.6666666667%; }
     .colorbar span:nth-child(4) {
       width: 10%; }
 
@@ -727,7 +727,7 @@ ol.list li {
 .reversed {
   background-color: white;
   border-color: white;
-  color: #1e787a; }
+  color: #008c95; }
   .reversed:hover {
     background-color: transparent;
     color: white; }
